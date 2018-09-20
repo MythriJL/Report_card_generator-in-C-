@@ -46,7 +46,7 @@ for(i=0;i<nos;i++)
 
 
 printf("enter the usn\n");
-scanf(" %s", &cse_students[i].usn);
+scanf("%s", &cse_students[i].usn);
 
 printf("enter the english marks (max marks=100)\n");
 scanf("%d",&cse_students[i].english);
