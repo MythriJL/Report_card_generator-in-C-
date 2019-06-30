@@ -56,7 +56,7 @@ scanf("%d",&cse_students[index].computer);
 
 
 printf("enter the mechanic  marks(max marks=100) \n");
-scanf("%d",&cse_students[i].mechanic);
+scanf("%d",&cse_students[index].mechanic);
 
 
 printf("enter the electrical marks(max marks=100) \n");
@@ -77,7 +77,7 @@ cse_students[index].mechanic+cse_students[index].electrical+cse_students[index].
 
 
 
-cse_students[i].cgpa=((((double)(cse_students[i].total)/600)*100)/10)+0.75;                
+cse_students[index].cgpa=((((double)(cse_students[index].total)/600)*100)/10)+0.75;                
 
 
 
@@ -141,16 +141,16 @@ else
  
 printf(" students list is as follows\n");
 printf("--------------------------------------------------------------------------------------------------------\n");
+char c[3]="usn";
+printf("%11s english computer mechanic electrical physics maths total percentage\n",c);
 
-printf("usn english computer mechanic electrical physics maths total percentage\n");
 
 
-
-for(index=0;i<number;index++)
+for(index=0;index<number;index++)
 {
 
 
-printf("%3s %7d %8d %8d %10d %7d %5d %5d %10f \t\n",cse_students[index].usn,cse_students[index].english,cse_students[index].computer,cse_students[index].mechanic,cse_students[index].electrical,
+printf("%s %7d %8d %8d %10d %7d %5d %5d %10f \t\n",cse_students[index].usn,cse_students[index].english,cse_students[index].computer,cse_students[index].mechanic,cse_students[index].electrical,
 cse_students[index].physics,cse_students[index].maths,cse_students[index].total,cse_students[index].cgpa);
 
 }
@@ -180,9 +180,4 @@ printf("pass:%d :fail:%d\n",pass,fail);
 return (0);
 
 }
-
-
-
-
-
 
