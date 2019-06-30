@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-int i,nos,pass,fail;
+int index,number,pass,fail;
 int maxEnglishStudentIndex = 0;  
 int maxEnglishMarks = -1;
 int maxComputerStudentIndex = 0;
@@ -39,20 +39,20 @@ float cgpa;
 
 
 printf("enter the number of students in the class\n");     
-scanf("%d",&nos);
+scanf("%d",&number);
 
-for(i=0;i<nos;i++)                                         
+for(index=0;index<number;index++)                                         
 {
 
 
 printf("enter the usn\n");
-scanf("%s", &cse_students[i].usn);
+scanf("%s", &cse_students[index].usn);
 
 printf("enter the english marks (max marks=100)\n");
-scanf("%d",&cse_students[i].english);
+scanf("%d",&cse_students[index].english);
 
 printf("enter the computer science marks(max marks=100) \n");
-scanf("%d",&cse_students[i].computer);
+scanf("%d",&cse_students[index].computer);
 
 
 printf("enter the mechanic  marks(max marks=100) \n");
@@ -60,78 +60,78 @@ scanf("%d",&cse_students[i].mechanic);
 
 
 printf("enter the electrical marks(max marks=100) \n");
-scanf("%d",&cse_students[i].electrical);
+scanf("%d",&cse_students[index].electrical);
 
 
 printf("enter the physics marks(max marks=100) \n");
-scanf("%d",&cse_students[i].physics);
+scanf("%d",&cse_students[index].physics);
 
 
 printf("enter the maths marks(max marks=100) \n");
-scanf("%d",&cse_students[i].maths);
+scanf("%d",&cse_students[index].maths);
 
                                                                          
 
-cse_students[i].total=(cse_students[i].english+cse_students[i].computer+
-cse_students[i].mechanic+cse_students[i].electrical+cse_students[i].physics+cse_students[i].maths);      
+cse_students[index].total=(cse_students[index].english+cse_students[index].computer+
+cse_students[index].mechanic+cse_students[index].electrical+cse_students[index].physics+cse_students[index].maths);      
 
 
 
-cse_students[i].cgpa=((double)(cse_students[i].total)/600)*100;                
+cse_students[i].cgpa=((((double)(cse_students[i].total)/600)*100)/10)+0.75;                
 
 
 
                                                                                 
-if(cse_students[i].english>maxEnglishMarks)                                  
+if(cse_students[index].english>maxEnglishMarks)                                  
 {
-maxEnglishMarks=cse_students[i].english;
-maxEnglishStudentIndex=i;
+maxEnglishMarks=cse_students[index].english;
+maxEnglishStudentIndex=index;
 }
 
 
-if(cse_students[i].computer>maxComputerMarks)
+if(cse_students[index].computer>maxComputerMarks)
 {
-maxComputerMarks=cse_students[i].computer;
-maxComputerStudentIndex=i;
+maxComputerMarks=cse_students[index].computer;
+maxComputerStudentIndex=index;
 }
 
-if(cse_students[i].mechanic>maxMechanicMarks)
+if(cse_students[index].mechanic>maxMechanicMarks)
 {
-maxMechanicMarks=cse_students[i].mechanic;
-maxMechanicStudentIndex=i;
+maxMechanicMarks=cse_students[index].mechanic;
+maxMechanicStudentIndex=index;
 }
 
-if(cse_students[i].electrical >maxElectricalMarks)
+if(cse_students[index].electrical >maxElectricalMarks)
 {
-maxElectricalMarks=cse_students[i].electrical;
-maxElectricalStudentIndex=i;
+maxElectricalMarks=cse_students[index].electrical;
+maxElectricalStudentIndex=index;
 }
 
-if(cse_students[i].physics>maxPhysicsMarks)
+if(cse_students[index].physics>maxPhysicsMarks)
 {
-maxPhysicsMarks=cse_students[i].physics;
-maxPhysicsStudentIndex=i;
+maxPhysicsMarks=cse_students[index].physics;
+maxPhysicsStudentIndex=index;
 }
 
-if(cse_students[i].maths>maxMathsMarks)
+if(cse_students[index].maths>maxMathsMarks)
 {
-maxMathsMarks=cse_students[i].maths;
-maxMathsStudentIndex=i;
+maxMathsMarks=cse_students[index].maths;
+maxMathsStudentIndex=index;
 }
 
 
-if(cse_students[i].total>maxtotalMarks)
+if(cse_students[index].total>maxtotalMarks)
 {
-maxtotalMarks=cse_students[i].total;
-maxtotalStudentIndex=i;
+maxtotalMarks=cse_students[index].total;
+maxtotalStudentIndex=index;
 }
 
                                                                  
                                                         
-if(cse_students[i].computer<35||cse_students[i].english<35||cse_students[i].maths<35||cse_students[i].mechanic<35||cse_students[i].electrical<35||cse_students[i].physics<35)
+if(cse_students[index].computer<35||cse_students[index].english<35||cse_students[index].maths<35||cse_students[index].mechanic<35||cse_students[index].electrical<35||cse_students[index].physics<35)
 {
 ++fail;
-cse_students[i].cgpa=0;
+cse_students[index].cgpa=0;
 }
 else
 ++pass;
@@ -146,12 +146,12 @@ printf("usn english computer mechanic electrical physics maths total percentage\
 
 
 
-for(i=0;i<nos;i++)
+for(index=0;i<number;index++)
 {
 
 
-printf("%3s %7d %8d %8d %10d %7d %5d %5d %10f \t\n",cse_students[i].usn,cse_students[i].english,cse_students[i].computer,cse_students[i].mechanic,cse_students[i].electrical,
-cse_students[i].physics,cse_students[i].maths,cse_students[i].total,cse_students[i].cgpa);
+printf("%3s %7d %8d %8d %10d %7d %5d %5d %10f \t\n",cse_students[index].usn,cse_students[index].english,cse_students[index].computer,cse_students[index].mechanic,cse_students[index].electrical,
+cse_students[index].physics,cse_students[index].maths,cse_students[index].total,cse_students[index].cgpa);
 
 }
 
