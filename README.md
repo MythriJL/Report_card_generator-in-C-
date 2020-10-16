@@ -1,2 +1,3 @@
 # project
-student marks card using c program
+student report card program by using c programming language
+
